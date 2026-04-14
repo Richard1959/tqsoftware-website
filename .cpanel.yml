@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/public_html/wp-content/themes/astra-child/
+    - /bin/cp -R * $DEPLOYPATH
