@@ -173,6 +173,48 @@ Version: 1.0.0
     transform: none !important; /* prevent translate-based hide tricks */
 }
 
+/* ---- How It Works steps ----------------------------------- */
+
+.sg2pay-how-it-works {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.sg2pay-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.sg2pay-step__num {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #1a73e8;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sg2pay-step__body h3 {
+    margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.sg2pay-step__body p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
 /* ---- Responsive ------------------------------------------- */
 
 @media (max-width: 768px) {

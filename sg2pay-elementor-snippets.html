@@ -1,0 +1,243 @@
+<!--
+  SG2Pay Landing Page — Elementor HTML Widget Snippets
+  =====================================================
+  Paste each block into an Elementor "HTML" widget in the relevant section.
+  The CSS for all custom classes lives in style.css (child theme).
+
+  PAGE STRUCTURE ORDER:
+    1. Hero
+    2. Web App Embed ("Try it now")
+    3. App Screenshots  ← Elementor Image/Carousel widget (no HTML needed)
+    4. Feature Cards
+    5. How It Works
+    6. Download Footer CTA
+    7. Disclaimer
+-->
+
+
+<!-- ============================================================
+  SECTION 1 — HERO
+  Use an Elementor "HTML" widget above your headline text widget.
+  ============================================================ -->
+<span class="sg2pay-free-badge">100% Free</span>
+
+
+<!-- ============================================================
+  SECTION 1 — HERO CTA ROW
+  Replace the existing download buttons with this HTML widget,
+  or use this alongside Elementor button widgets.
+  ============================================================ -->
+<div class="sg2pay-cta-row">
+
+  <!-- App Store -->
+  <a href="https://apps.apple.com/app/id6751992893" target="_blank" rel="noopener">
+    <img src="https://tqsoftware.com/wp-content/uploads/app-store-badge.svg"
+         alt="Download on the App Store" height="44">
+  </a>
+
+  <!-- Google Play -->
+  <a href="https://play.google.com/store/apps/details?id=com.sg2pay.app" target="_blank" rel="noopener">
+    <img src="https://tqsoftware.com/wp-content/uploads/google-play-badge.png"
+         alt="Get it on Google Play" height="44">
+  </a>
+
+  <!-- Web App -->
+  <a class="sg2pay-btn-web" href="https://sg2pay.tqsoftware.com" target="_blank" rel="noopener">
+    🌐 Try in Browser — No Download Needed
+  </a>
+
+</div>
+
+
+<!-- ============================================================
+  SECTION 2 — WEB APP EMBED
+  Add a new full-width Elementor section between the hero and
+  the screenshots. Paste this into an HTML widget inside it.
+
+  NOTE: If the iframe shows "refused to connect", see the note
+  at the bottom of this file about X-Frame-Options headers.
+  ============================================================ -->
+<div class="sg2pay-web-embed-section">
+
+  <h2>Try SG2Pay Right Now</h2>
+  <p>No download needed — use the full calculator directly in your browser.</p>
+
+  <!-- Phone-frame style embed (good for mobile-first feel) -->
+  <div class="sg2pay-iframe-wrap">
+    <iframe
+      src="https://sg2pay.tqsoftware.com"
+      title="SG2Pay — Melt Value Calculator"
+      loading="lazy"
+      allow="fullscreen"
+    ></iframe>
+  </div>
+
+  <p style="margin-top:16px; font-size:13px; color:#888;">
+    Prefer the app?
+    <a href="https://apps.apple.com/app/id6751992893" target="_blank">App Store</a> ·
+    <a href="https://play.google.com/store/apps/details?id=com.sg2pay.app" target="_blank">Google Play</a>
+  </p>
+
+</div>
+
+
+<!-- ============================================================
+  SECTION 4 — FEATURE CARDS
+  Paste into an HTML widget inside a full-width section.
+  ============================================================ -->
+<div class="sg2pay-features">
+
+  <div class="sg2pay-feature-card">
+    <div class="icon">⚖️</div>
+    <h3>Accurate Melt Values</h3>
+    <p>Calculate real-time melt value for any gold or silver coin using live spot prices.</p>
+  </div>
+
+  <div class="sg2pay-feature-card">
+    <div class="icon">💱</div>
+    <h3>Any Currency</h3>
+    <p>Trade in USD, EUR, SGD or any currency — even set custom rates for barter scenarios.</p>
+  </div>
+
+  <div class="sg2pay-feature-card">
+    <div class="icon">🔒</div>
+    <h3>Private Stack Tracking</h3>
+    <p>Track your full precious metals portfolio privately, with no account required.</p>
+  </div>
+
+  <div class="sg2pay-feature-card">
+    <div class="icon">🌐</div>
+    <h3>Works in Any Browser</h3>
+    <p>Use the web version instantly, or download the native app for iOS and Android.</p>
+  </div>
+
+</div>
+
+
+<!-- ============================================================
+  SECTION 5 — HOW IT WORKS
+  Three-step layout. Paste into an HTML widget.
+  ============================================================ -->
+<div class="sg2pay-how-it-works">
+
+  <div class="sg2pay-step">
+    <div class="sg2pay-step__num">1</div>
+    <div class="sg2pay-step__body">
+      <h3>Build your wallet</h3>
+      <p>Add your coins, bars, or custom bullion items. Include silverware or any metal with a known weight.</p>
+    </div>
+  </div>
+
+  <div class="sg2pay-step">
+    <div class="sg2pay-step__num">2</div>
+    <div class="sg2pay-step__body">
+      <h3>Get live spot prices</h3>
+      <p>SG2Pay fetches current gold and silver spot prices automatically — or enter prices manually when markets are unavailable.</p>
+    </div>
+  </div>
+
+  <div class="sg2pay-step">
+    <div class="sg2pay-step__num">3</div>
+    <div class="sg2pay-step__body">
+      <h3>Trade with confidence</h3>
+      <p>Enter any amount and instantly see which coin combinations match — so you never overpay or undersell.</p>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ============================================================
+  SECTION 6 — FOOTER DOWNLOAD CTA
+  Repeat the download options at the bottom.
+  ============================================================ -->
+<div class="sg2pay-cta-row" style="margin: 8px 0 0;">
+  <a href="https://apps.apple.com/app/id6751992893" target="_blank" rel="noopener">
+    <img src="https://tqsoftware.com/wp-content/uploads/app-store-badge.svg"
+         alt="Download on the App Store" height="44">
+  </a>
+  <a href="https://play.google.com/store/apps/details?id=com.sg2pay.app" target="_blank" rel="noopener">
+    <img src="https://tqsoftware.com/wp-content/uploads/google-play-badge.png"
+         alt="Get it on Google Play" height="44">
+  </a>
+  <a class="sg2pay-btn-web" href="https://sg2pay.tqsoftware.com" target="_blank" rel="noopener">
+    🌐 Open Web App
+  </a>
+</div>
+
+
+<!-- ============================================================
+  SECTION 7 — DISCLAIMER
+  Small text at the very bottom.
+  ============================================================ -->
+<p style="font-size:12px; color:#999; text-align:center; margin-top:32px;">
+  SG2Pay is an educational tool for precious-metal hobbyists.
+  It does not provide investment advice or financial services.
+</p>
+
+
+<!--
+  ============================================================
+  CSS ADDITIONS NEEDED IN style.css
+  (How It Works steps — add to child theme style.css)
+  ============================================================
+
+.sg2pay-how-it-works {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.sg2pay-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.sg2pay-step__num {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #1a73e8;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sg2pay-step__body h3 {
+    margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.sg2pay-step__body p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+  ============================================================
+  IFRAME NOT LOADING? (X-Frame-Options fix)
+  ============================================================
+  If the iframe shows "refused to connect", the web app server
+  is blocking framing. Fix it by adding this HTTP response header
+  to sg2pay.tqsoftware.com:
+
+    Content-Security-Policy: frame-ancestors 'self' https://tqsoftware.com
+
+  OR (older approach, less flexible):
+    X-Frame-Options: ALLOW-FROM https://tqsoftware.com
+
+  For cPanel hosting: add this to the .htaccess in the web app root:
+    Header always set Content-Security-Policy "frame-ancestors 'self' https://tqsoftware.com"
+
+  If you can't change the headers, replace the iframe section with
+  the fallback link button variant instead (sg2pay-btn-web style).
+  ============================================================
+-->
