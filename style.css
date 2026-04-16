@@ -219,12 +219,33 @@ Version: 1.0.0
 
 @media (max-width: 768px) {
     .sg2pay-cta-row {
-        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 6px;
         align-items: stretch;
+    }
+
+    .sg2pay-cta-row > * {
+        flex: 1 1 0;
+        min-width: 0;
     }
 
     .sg2pay-btn-web {
         justify-content: center;
+        text-align: center;
+        font-size: 11px;
+        padding: 8px 6px;
+    }
+
+    .sg2pay-cta-row > a:not(.sg2pay-btn-web) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sg2pay-cta-row img {
+        height: 36px !important;
+        width: auto !important;
+        max-width: 100%;
     }
 
     .sg2pay-iframe-wrap iframe {
