@@ -1,5 +1,4 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/public_html/wp-content/themes/astra-child/
-    - /bin/cp -R * $DEPLOYPATH
+    - /bin/cp -R /home/rbridger/repositories/tqsoftware-website/* /home/rbridger/public_html/wp-content/themes/astra-child/
