@@ -4,6 +4,16 @@ add_action('wp_enqueue_scripts', function() {
 });
 
 
+// Elementor template 771 (TQSoft content) is output on every page. On the SG2Pay page,
+// stop it being rendered at all, so search engines and AI crawlers only see SG2Pay content.
+add_filter('elementor/frontend/builder_content_data', function($data, $post_id) {
+    if ((int) $post_id === 771 && strpos($_SERVER['REQUEST_URI'], '/sg2pay') !== false) {
+        return [];
+    }
+    return $data;
+}, 10, 2);
+
+// Fallback: still hide it visually if it ever renders.
 add_action('wp_head', function() {
     if (strpos($_SERVER['REQUEST_URI'], '/sg2pay') !== false) {
         echo '<style>.elementor.elementor-771{display:none!important}</style>';
