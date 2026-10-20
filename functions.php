@@ -4,14 +4,38 @@ add_action('wp_enqueue_scripts', function() {
 });
 
 
-// Elementor template 771 (TQSoft content) is output on every page. On the SG2Pay page,
-// stop it being rendered at all, so search engines and AI crawlers only see SG2Pay content.
-add_filter('elementor/frontend/builder_content_data', function($data, $post_id) {
-    if ((int) $post_id === 771 && strpos($_SERVER['REQUEST_URI'], '/sg2pay') !== false) {
-        return [];
+// On the SG2Pay page, strip all Popup Builder popups (they hold TQSoft content and are set
+// to "Everywhere") and Elementor item 771 from the HTML, so search engines and AI crawlers
+// only see SG2Pay content. Other pages are untouched.
+function tq_sg2pay_strip_divs($html, $openTagPattern) {
+    $offset = 0;
+    while (preg_match($openTagPattern, $html, $m, PREG_OFFSET_CAPTURE, $offset)) {
+        $start = $m[0][1];
+        $pos = $start + strlen($m[0][0]);
+        $depth = 1;
+        while ($depth > 0 && preg_match('#<(/?)div\b[^>]*>#i', $html, $t, PREG_OFFSET_CAPTURE, $pos)) {
+            $depth += ($t[1][0] === '/') ? -1 : 1;
+            $pos = $t[0][1] + strlen($t[0][0]);
+        }
+        if ($depth !== 0) {
+            break; // unbalanced markup: leave the rest alone
+        }
+        $html = substr($html, 0, $start) . substr($html, $pos);
+        $offset = $start;
     }
-    return $data;
-}, 10, 2);
+    return $html;
+}
+
+add_action('template_redirect', function () {
+    if (is_admin() || strpos($_SERVER['REQUEST_URI'], '/sg2pay') === false) {
+        return;
+    }
+    ob_start(function ($html) {
+        $html = tq_sg2pay_strip_divs($html, '#<div\b[^>]*class="sgpb-main-popup-data-container-\d+"[^>]*>#i');
+        $html = tq_sg2pay_strip_divs($html, '#<div\b[^>]*class="[^"]*\belementor-771\b[^"]*"[^>]*>#i');
+        return $html;
+    });
+});
 
 // Fallback: still hide it visually if it ever renders.
 add_action('wp_head', function() {
